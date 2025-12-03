@@ -6,7 +6,7 @@ void new_scan()
   TH1F* hloss = new TH1F("hloss","; -dE [MeV]",100,0,10);
   TGraph* gdEdx =  new TGraph();
   gLoss->SetTitle("Energy Loss vs ;beta_gamma; MeV/ (g.cm^2)");
-  gLoss->SetLogy(1);
+  //gLoss->SetLogy(1);
   gLoss->SetMarkerStyle(20);
   gLoss->SetMarkerColor(kBlue);
   gLoss->SetLineWidth(2);
@@ -35,7 +35,8 @@ void new_scan()
     gLoss->SetPoint(i, current_p, mean_loss);
     }
   TCanvas *c1 = new TCanvas("c1", "Momentum Scan", 800, 600);
-  c1->SetGrid(); 
+  c1->SetGrid();
+  //c1->Setlogx();
   gLoss->Draw("ALP");
   c1->Update();
 
